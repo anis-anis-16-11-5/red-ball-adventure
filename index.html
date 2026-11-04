@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل مغامرة الكرة الحمراء</title>
+    <!-- تضمين Tailwind CSS للتصميم -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* استيراد خط 'Cairo' العربي */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* تحسين شكل الأيقونة لتكون مربعة بحواف دائرية */
+        .icon-box {
+            width: 150px;
+            height: 150px;
+            border-radius: 25px; /* حواف دائرية قليلاً للمربع */
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 4px solid #fff;
+        }
+        
+        .icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* لملء المربع بالكامل */
+        }
+
+        /* تحسين شكل صورة الشاشة لتكون مستطيلة عمودية بنسبة 9:16 */
+        .screenshot-box {
+            /* قمنا بتقليل العرض قليلاً ليتناسب الشكل العمودي في المساحة المتاحة */
+            width: 75%; 
+            aspect-ratio: 9 / 16; /* نسبة عرض مستطيلة عمودية: 9 عرض لكل 16 ارتفاع */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 4px solid #fff;
+            /* توسيط المستطيل عمودياً */
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        .screenshot-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* زر التنزيل */
+        .btn-download {
+            transition: transform 0.2s;
+        }
+        .btn-download:hover {
+            transform: scale(1.05);
+        }
+        .btn-download:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- البطاقة الرئيسية -->
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row">
+        
+        <!-- القسم الأيمن (المعلومات والأيقونة) -->
+        <div class="w-full md:w-1/3 bg-gray-50 p-8 flex flex-col items-center border-l border-gray-100">
+            
+            <!-- 1. أيقونة التطبيق -->
+            <!-- ملاحظة: يجب أن تكون الصورة "1764779306669.jpg" في نفس المجلد -->
+            <div class="icon-box mb-6 relative group">
+                <img src="1764779306669.jpg" 
+                     alt="أيقونة اللعبة" 
+                     onerror="this.src='https://placehold.co/150x150/ff0000/ffffff?text=Icon+Error';">
+            </div>
+
+            <!-- اسم اللعبة -->
+            <h1 class="text-3xl font-black text-gray-800 text-center mb-2 leading-tight">
+                مغامرة الكرة<br><span class="text-red-600">الحمراء</span>
+            </h1>
+            
+            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold mb-8">
+                الإصدار 1.0
+            </span>
+
+            <!-- 2. زر التنزيل -->
+            <!-- ملاحظة: يجب أن يكون ملف "مغامرة الكرة الحمراء 1.0.apk" في نفس المجلد -->
+            <a href="مغامرة الكرة الحمراء 1.0.apk" download 
+               class="btn-download w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-green-500/30 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <div class="text-right">
+                    <div class="text-xs opacity-90">تنزيل مباشر</div>
+                    <div class="text-xl">Download APK</div>
+                </div>
+            </a>
+
+            <p class="text-xs text-gray-400 text-center">
+                متوافق مع أجهزة Android
+            </p>
+        </div>
+
+        <!-- القسم الأيسر (صورة الشاشة والوصف) -->
+        <div class="w-full md:w-2/3 p-8 md:p-12">
+            
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <span class="w-2 h-8 bg-red-500 rounded-full block"></span>
+                عن اللعبة
+            </h2>
+
+            <!-- 3. صورة الشاشة -->
+            <!-- ملاحظة: يجب أن تكون الصورة "5768835872.png" في نفس المجلد -->
+            <div class="screenshot-box mb-8">
+                <img src="5768835872.png" 
+                     alt="صورة من داخل اللعبة"
+                     onerror="this.src='https://placehold.co/600x1067/333/ffffff?text=Screenshot+Error';">
+            </div>
+
+            <!-- الوصف -->
+            <div class="prose prose-lg text-gray-600 leading-relaxed text-justify">
+                <p class="mb-4">
+                    استعد لخوض أقوى المغامرات! تحكم في الكرة الحمراء واقفز عبر العقبات الخطيرة. 
+                    واجه الأعداء واجمع النجوم في طريقك للوصول إلى خط النهاية.
+                </p>
+                <p>
+                    تتميز اللعبة بجرافيك عالي الجودة ومراحل متنوعة تزداد صعوبة تدريجياً. 
+                    هل أنت مستعد للتحدي؟ قم بالتنزيل الآن وابدأ المغامرة!
+                </p>
+            </div>
+
+            <!-- ميزات إضافية -->
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <div class="flex items-center gap-2 text-gray-700">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <i class="fas fa-gamepad"></i>
+                        ✓
+                    </div>
+                    <span class="font-semibold">تحكم سهل</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-700">
+                    <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                        <i class="fas fa-star"></i>
+                        ✓
+                    </div>
+                    <span class="font-semibold">مراحل ممتعة</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
